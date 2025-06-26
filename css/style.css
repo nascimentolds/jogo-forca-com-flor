@@ -480,6 +480,10 @@ body {
     top: 22%;
   }
 
+  .popup-header span {
+    margin-top: 30px;
+  }
+
   .revelada {
     font-size: 24px;
   }
