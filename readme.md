@@ -38,14 +38,14 @@ Projeto desenvolvido como parte das atividades acadêmicas da disciplina de **Pr
 
 ### Screenshots
 
-![screenshot](/src/screenshot/desktop.png)
+![screenshot](/screenshot/desktop.png)
 
-![screenshot](/src/screenshot/mobile.png)
+![screenshot](/screenshot/mobile.png)
 
 ### Links
 
-- Live Site URL: [@Vercel](https://tenzies-game-sepia.vercel.app/)
-- Repositório: [@GitHub](https://github.com/nascimentolds/tenzies-game)
+- Live Site URL: [@Vercel](https://jogo-forca-com-flor.vercel.app/)
+- Repositório: [@GitHub](https://github.com/nascimentolds/jogo-forca-com-flor)
 
 ---
 
@@ -65,13 +65,13 @@ Projeto desenvolvido como parte das atividades acadêmicas da disciplina de **Pr
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/seu-repo-jogo-florido.git
+   git clone https://github.com/nascimentolds/jogo-forca-com-flor.git
    ```
 
 2. Acesse o diretório:
 
    ```bash
-   cd seu-repo-jogo-florido
+   cd jogo-forca-com-flor
    ```
 
 3. Execute com Live Server (recomendado no VS Code):
