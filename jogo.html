@@ -1,0 +1,88 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da Forca</title>
+  <link rel="icon" type="img/png" href="img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Luckiest+Guy&display=swap"
+    rel="stylesheet" />
+
+  <!-- Biblioteca de Icones -->
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="container" id="jogo-container" data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000"
+        data-aos-once="false">
+    <header class="header">
+      <img src="../img/logo.png" alt="Logo do Jogo da Forca" class="logo" data-aos="fade-in" data-aos-delay="150" data-aos-duration="1000"
+        data-aos-once="false" />
+    </header>
+    <main class="main">
+      <div class="flor">
+        <div class="flor-montagem">
+          <picture>
+            <source media="(max-width: 600px)" srcset="../img/flor-caule2.png">
+            <source media="(max-width: 1024px)" srcset="../img/flor-caule.png">
+            <img class="flor-caule" src="../img/flor-caule.png" alt="Descrição da imagem">
+          </picture>
+          <!-- <img class="flor-caule" src="../img/flor-caule.png" alt="Caule da flor"> -->
+          <img class="flor-miolo" src="../img/flor-miolo.png" alt="Miolo da flor">
+          <img class="petala flor-petala1" src="../img/flor-petala1.png" alt="Pétala da flor">
+          <img class="petala flor-petala2" src="../img/flor-petala2.png" alt="Pétala da flor">
+          <img class="petala flor-petala3" src="../img/flor-petala3.png" alt="Pétala da flor">
+          <img class="petala flor-petala4" src="../img/flor-petala4.png" alt="Pétala da flor">
+          <img class="petala flor-petala5" src="../img/flor-petala5.png" alt="Pétala da flor">
+        </div>
+      </div>
+
+      <div class="jogo">
+        <h1 id="dica" class="dica"></h1>
+        <div id="palavra" class="palavra"></div>
+        <div id="teclado" class="teclado"></div>
+      </div>
+    </main>
+  </div>
+
+  <div class="area-popup vitoria oculto" id="my-canvas">
+    <div class="popup">
+      <h1 class="popup-header header-vitoria"><span>Parabéns!</span></h1>
+      <div class="conteudo conteudo-vitoria">
+        <span class="anuncio">Você acertou a palavra:</span>
+        <h2 class="revelada pal-vitoria"></h2>
+        <button class="btn reiniciar">
+          <span class="iconify" data-icon="material-symbols:refresh-rounded" data-inline="false"></span>
+          Recomeçar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-popup derrota oculto">
+    <div class="popup">
+      <h1 class="popup-header header-derrota"><span>Que pena!</span></h1>
+      <div class="conteudo conteudo-derrota">
+        <span class="anuncio">Você errou a palavra:</span>
+        <h2 class="revelada pal-derrota"></h2>
+        <button class="btn reiniciar">
+          <span class="iconify" data-icon="material-symbols:refresh-rounded" data-inline="false"></span>
+          Recomeçar
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

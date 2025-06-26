@@ -1,0 +1,55 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da Forca</title>
+  <link rel="icon" type="img/png" href="img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Luckiest+Guy&display=swap"
+    rel="stylesheet" />
+
+  <!-- Biblioteca de Icones -->
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+    <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="../img/logo.png" alt="Logo do Jogo da Forca" class="logo" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1000"
+        data-aos-once="false"/>
+    </header>
+    <div class="index-main">
+      <div class="opcoes opcoes-jogador">
+        <span class="alerta" data-aos="slide-left" data-aos-delay="0" data-aos-duration="1000"
+        data-aos-once="false"></span>
+        <input class="input" type="text" placeholder="Digite a palavra" id="palavra-jogador" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"
+        data-aos-once="false">
+        <input class="input" type="text" placeholder="Digite a dica" id="dica-jogador" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"
+        data-aos-once="false">
+        <button class="btn" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000"
+        data-aos-once="false">
+          <span class="iconify" data-icon="uil:play" data-inline="false"></span>
+          Jogar
+        </button>
+        <a href="index.html" class="btn btn-vermelho" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000"
+        data-aos-once="false">
+          <span class="iconify" data-icon="typcn:arrow-back-outline" data-inline="false"></span>
+          Voltar
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,511 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #008be2, #024168);
+  font-family: "Baloo 2", sans-serif;
+}
+
+.container {
+  background-image: url("../img/grama.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.logo {
+  width: 125px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  padding-inline: 60px;
+}
+
+.jogo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.dica {
+  color: #fff;
+  font-size: 36px;
+  text-shadow: 2px 2px 2px rgba(1, 62, 100, 0.8);
+}
+
+.palavra {
+  font-size: 54px;
+  color: #ffea4b;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: #3c92b2;
+  box-shadow: 3px 3px 3px rgba(1, 62, 100, 0.8);
+  padding-inline: 20px;
+  border-radius: 10px;
+}
+
+.teclado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 550px;
+}
+
+.tecla {
+  width: 50px;
+  height: 50px;
+  background-color: #f5ffac;
+  color: #4c4a82;
+  font-size: 36px;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(1, 62, 100, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.tecla:hover {
+  transform: scale(1.1);
+}
+
+.flor {
+  width: 80%;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.flor.aparecer {
+  opacity: 1;
+  z-index: -1;
+}
+
+.flor-montagem {
+  position: absolute;
+  bottom: 0;
+  left: 150px;
+}
+
+.flor-caule {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
+.flor-miolo {
+  position: absolute;
+  bottom: 275px;
+  left: 40px;
+}
+
+.petala {
+  position: absolute;
+  z-index: -1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.flor-petala1 {
+  bottom: 215px;
+  left: 80px;
+}
+
+.flor-petala2 {
+  bottom: 342px;
+  left: -20px;
+}
+
+.flor-petala3 {
+  bottom: 397px;
+  left: 70px;
+}
+
+.flor-petala4 {
+  bottom: 390px;
+  left: 157px;
+}
+
+.flor-petala5 {
+  bottom: 280px;
+  left: 157px;
+}
+
+@keyframes cair {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 5;
+  }
+  100% {
+    transform: translateY(280px) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+.petala.removida {
+  animation: cair 1.2s ease-in-out forwards;
+  /* z-index: 1; */
+}
+
+.vitoria,
+.derrota {
+  display: none;
+}
+
+.area-popup {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  inset: 0;
+}
+
+.popup {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.header-vitoria {
+  background-image: url("../img/faixa-verde.png");
+}
+
+.header-derrota {
+  background-image: url("../img/faixa-vermelha.png");
+}
+
+.popup-header {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-family: "Luckiest Guy", cursive;
+  text-transform: uppercase;
+  font-size: 36px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 380px;
+  height: 110px;
+  z-index: 1;
+  font-weight: 400;
+}
+
+.popup-header span {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 40px;
+  width: 380px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.conteudo-vitoria {
+  border: 10px solid #578533;
+}
+
+.conteudo-derrota {
+  border: 10px solid #eb343e;
+}
+
+.anuncio {
+  font-size: 24px;
+  color: #753186;
+  margin-top: 20px;
+}
+
+.pal-vitoria {
+  color: #307927;
+}
+
+.pal-derrota {
+  color: #e22126;
+}
+
+.revelada {
+  font-size: 32px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ANIMAÇÃO */
+.area-popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  display: flex;
+}
+
+.area-popup.ativa {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.area-popup.oculto {
+  display: none;
+}
+
+.popup {
+  transform: scale(0.7);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.area-popup.ativa .popup {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ----*/
+
+.btn {
+  background-color: #753186;
+  color: #fff;
+  font-family: "baloo 2", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-inline: 30px;
+  padding-block: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 3px 3px 1px rgba(72, 2, 89, 0.5);
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px;
+}
+
+.btn:hover {
+  background-color: #5a1f6b;
+}
+
+.btn-vermelho {
+  background-color: #eb343e;
+}
+
+.btn-vermelho:hover {
+  background-color: #b81f2a;
+}
+
+/* INDEX */
+
+.index-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: auto;
+}
+
+.index-logo {
+  width: 300px;
+  margin-bottom: 40px;
+}
+
+.logo-inicial {
+  width: 100%;
+}
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 100px;
+}
+
+.opcoes-jogador {
+  width: 400px;
+  margin-bottom: 250px;
+}
+
+.input {
+  background-color: #e6e7e8;
+  color: #4c4a82;
+  font-family: "baloo 2", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  padding-inline: 30px;
+  padding-block: 10px;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 3px 3px 1px rgba(72, 2, 89, 0.5);
+  width: 100%;
+}
+
+.alerta {
+  color: #ffea4b;
+  font-size: 24px;
+  text-align: center;
+  font-family: "baloo 2", sans-serif;
+  font-weight: 700;
+  /* text-shadow: 1px 1px 20px rgba(255,255,255, 1); */
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  color: #024168;
+  font-size: 20px;
+  /* font-weight: 700; */
+}
+
+@media (max-width: 600px) {
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 20px;
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+  }
+
+  .flor-montagem {
+    order: 1;
+    position: absolute;
+    margin-top: 100px;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    min-height: 400px;
+    transform: scale(0.8);
+    z-index: -1;
+  }
+
+  .flor-caule {
+    bottom: -390px;
+    left: -55px;
+  }
+
+  .jogo {
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: auto;
+    padding-top: 180px;
+  }
+
+  .dica {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .palavra {
+    font-size: 36px;
+  }
+
+  .teclado {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .tecla {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .popup,
+  .conteudo {
+    width: 90%;
+    font-size: 18px;
+    top: 22%;
+  }
+
+  .revelada {
+    font-size: 24px;
+  }
+
+  .anuncio {
+    font-size: 18px;
+  }
+
+  .area-popup {
+    z-index: 1000;
+  }
+
+  .index-main {
+    height: 100%;
+    padding: 30px;
+  }
+
+  .opcoes-jogador {
+    width: 100%;
+    margin-bottom: 250px;
+  }
+
+  .box {
+    font-size: 18px;
+  }
+}
+
+.area-popup {
+  z-index: 1000;
+}

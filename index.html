@@ -1,0 +1,57 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Jogo da Forca</title>
+  <link rel="icon" type="img/png" href="img/favicon.png">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Luckiest+Guy&display=swap"
+    rel="stylesheet" />
+
+  <!-- Biblioteca de Icones -->
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="index-main">
+      <div class="index-logo" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000"
+        data-aos-once="false">
+        <img src="img/logo.png" alt="Logo do Jogo da Forca" class="logo-inicial" />
+      </div>
+      <div class="opcoes">
+        <div class="box" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
+        data-aos-once="false">
+          <button class="btn" id="opcao-1Jogador">
+            <span class="iconify" data-icon="fluent:person-12-regular" data-inline="false"></span>
+            1 Jogador
+          </button>
+          <span>Salve a flor antes que perca todas as pétalas! Use a dica, escolha as letras e descubra a palavra.</span>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000"
+        data-aos-once="false">
+          <button class="btn" id="opcao-2Jogadores">
+            <span class="iconify" data-icon="fluent:people-12-regular" data-inline="false"></span>
+            2 Jogadores
+          </button>
+          <span><b>Modo 2 Jogadores:</b> Um escolhe a palavra, o outro tenta adivinhar. Desafie um amigo!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
