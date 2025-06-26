@@ -38,9 +38,13 @@ Projeto desenvolvido como parte das atividades acadêmicas da disciplina de **Pr
 
 ### Screenshots
 
-![screenshot](/screenshot/desktop.png)
+<p align="center">
+  <img src="/screenshot/desktop.png" alt="Versão Desktop" width="600"/>
+</p>
 
-![screenshot](/screenshot/mobile.png)
+<p align="center">
+  <img src="/screenshot/mobile.png" alt="Versão Mobile" width="300"/>
+</p>
 
 ### Links
 
