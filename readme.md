@@ -98,5 +98,5 @@ Projeto desenvolvido como parte das atividades acadêmicas da disciplina de **Pr
 
 ## 🧑‍💻 Autor
 
-Criado por **[Marcelo Nascimento]**
+Criado por **Marcelo Nascimento**
 
